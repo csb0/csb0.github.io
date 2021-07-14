@@ -1,0 +1,70 @@
+fitlme(DM,'fMRI_SIG ~ (fMRI_TO+fMRI_TOT+fMRI_BP)*accuracy*difficulty + heartHRF + respHRF + roll + pitch + yaw + y + x + z + (1|subjNum) + (fMRI_TO|subjNum) + (fMRI_TOT|subjNum) + (fMRI_BP|subjNum)')
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations           16399
+    Fixed effects coefficients          24
+    Random effects coefficients         63
+    Covariance parameters               11
+
+Formula:
+    Linear Mixed Formula with 14 predictors.
+
+Model fit statistics:
+    AIC       BIC       LogLikelihood    Deviance
+    -23201    -22932    11636            -23271  
+
+Fixed effects coefficients (95% CIs):
+    Name                                  Estimate       SE            tStat       DF       pValue        Lower          Upper      
+    '(Intercept)'                           -0.014608      0.031187    -0.46841    16375        0.6395      -0.075737       0.046521
+    'fMRI_TO'                                 -4.6821       0.90057      -5.199    16375    2.0275e-07        -6.4473        -2.9169
+    'fMRI_TOT'                                0.14597      0.046211      3.1589    16375     0.0015867       0.055395        0.23655
+    'fMRI_BP'                                  4.5559       0.92948      4.9016    16375    9.5982e-07          2.734         6.3778
+    'difficulty'                            0.0087022     0.0084887      1.0252    16375        0.3053     -0.0079365       0.025341
+    'accuracy'                              0.0021524     0.0081396     0.26444    16375       0.79145      -0.013802       0.018107
+    'heartHRF'                            -1.0593e-08    8.7404e-08     -0.1212    16375       0.90354    -1.8191e-07     1.6073e-07
+    'respHRF'                             -1.0234e-06    1.9793e-07     -5.1708    16375    2.3578e-07    -1.4114e-06    -6.3549e-07
+    'roll'                                 -0.0015823      0.002475    -0.63932    16375       0.52262     -0.0064336      0.0032689
+    'pitch'                                0.00056519     0.0019971     0.28301    16375       0.77717     -0.0033493      0.0044797
+    'yaw'                                  -0.0024028     0.0040524    -0.59292    16375       0.55324      -0.010346      0.0055405
+    'y'                                     0.0034229     0.0016431      2.0832    16375       0.03725     0.00020222      0.0066437
+    'x'                                    -0.0091204     0.0041739     -2.1851    16375      0.028898      -0.017302    -0.00093898
+    'z'                                     0.0077894     0.0036641      2.1259    16375       0.03353     0.00060734       0.014971
+    'fMRI_TO:difficulty'                       3.4271       0.70559       4.857    16375    1.2027e-06          2.044         4.8101
+    'fMRI_TOT:difficulty'                    -0.15246      0.046553      -3.275    16375      0.001059       -0.24371       -0.06121
+    'fMRI_BP:difficulty'                      -2.6615       0.71831     -3.7052    16375     0.0002119        -4.0695        -1.2535
+    'fMRI_TO:accuracy'                         1.5623       0.68432       2.283    16375      0.022445        0.22094         2.9036
+    'fMRI_TOT:accuracy'                      -0.13647      0.046143     -2.9575    16375     0.0031063       -0.22691      -0.046021
+    'fMRI_BP:accuracy'                       -0.87005       0.69783     -1.2468    16375       0.21249        -2.2379        0.49778
+    'difficulty:accuracy'                   -0.011176      0.008789     -1.2716    16375       0.20355      -0.028403      0.0060517
+    'fMRI_TO:difficulty:accuracy'              -2.622        0.7459     -3.5153    16375     0.0004405        -4.0841          -1.16
+    'fMRI_TOT:difficulty:accuracy'            0.16078      0.048789      3.2953    16375    0.00098508       0.065145        0.25641
+    'fMRI_BP:difficulty:accuracy'              1.7306       0.75835       2.282    16375      0.022501        0.24412          3.217
+
+Random effects covariance parameters (95% CIs):
+Group: subjNum (9 Levels)
+    Name1                Name2                Type         Estimate     Lower         Upper     
+    '(Intercept)'        '(Intercept)'        'std'        0.0015743    2.1527e-15    1.1513e+09
+
+Group: subjNum (9 Levels)
+    Name1                Name2                Type          Estimate    Lower        Upper  
+    '(Intercept)'        '(Intercept)'        'std'         0.058911    0.0086898    0.39938
+    'fMRI_TO'            '(Intercept)'        'corr'        -0.98686           -1    0.99874
+    'fMRI_TO'            'fMRI_TO'            'std'           1.8022       1.0569      3.073
+
+Group: subjNum (9 Levels)
+    Name1                Name2                Type          Estimate    Lower         Upper  
+    '(Intercept)'        '(Intercept)'        'std'         0.011066    0.00065246    0.18768
+    'fMRI_TOT'           '(Intercept)'        'corr'        -0.95245            -1          1
+    'fMRI_TOT'           'fMRI_TOT'           'std'         0.026605      0.011952    0.05922
+
+Group: subjNum (9 Levels)
+    Name1                Name2                Type          Estimate    Lower       Upper 
+    '(Intercept)'        '(Intercept)'        'std'         0.067285    0.011729     0.386
+    'fMRI_BP'            '(Intercept)'        'corr'        -0.99894         NaN       NaN
+    'fMRI_BP'            'fMRI_BP'            'std'           1.8873      1.1119    3.2037
+
+Group: Error
+    Name             Estimate    Lower      Upper 
+    'Res Std'        0.1186      0.11732    0.1199
