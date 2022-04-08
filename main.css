@@ -143,7 +143,7 @@ padding: 2px;
 
 .thumbnail:hover span{ /*CSS for enlarged image*/
 visibility: visible;
-top: -195;
+top: -36;
 left: 600; /*position where enlarged image should offset horizontally */
 z-index: 50;
  -webkit-box-shadow: 0 15px 10px #111;
